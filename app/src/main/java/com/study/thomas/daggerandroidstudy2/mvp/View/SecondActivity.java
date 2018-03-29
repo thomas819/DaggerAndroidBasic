@@ -12,8 +12,8 @@ import dagger.android.AndroidInjection;
 
 public class SecondActivity extends AppCompatActivity implements SecondContract.View{
 
-    @Inject
-    SecondContract.View view;
+    @Inject SecondContract.Presenter presenter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,8 +7,10 @@ package com.study.thomas.daggerandroidstudy2.mvp.Contract;
 public interface MainContract {
     interface View{
 
+        void showTv(String data);
     }
     interface Presenter{
 
+        void getData();
     }
 }

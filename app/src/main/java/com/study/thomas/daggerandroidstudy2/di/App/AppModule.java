@@ -4,7 +4,7 @@ import android.app.Activity;
 
 import com.study.thomas.daggerandroidstudy2.di.MainComponent;
 import com.study.thomas.daggerandroidstudy2.di.SecondComponent;
-import com.study.thomas.daggerandroidstudy2.mvp.Model.RequestHelper;
+import com.study.thomas.daggerandroidstudy2.mvp.Model.RetrofitHelperInterface;
 import com.study.thomas.daggerandroidstudy2.mvp.Model.RetrofitHelper;
 import com.study.thomas.daggerandroidstudy2.mvp.View.MainActivity;
 import com.study.thomas.daggerandroidstudy2.mvp.View.SecondActivity;
@@ -16,7 +16,6 @@ import dagger.Module;
 import dagger.android.ActivityKey;
 import dagger.android.AndroidInjector;
 import dagger.multibindings.IntoMap;
-import retrofit2.Retrofit;
 
 /**
  * Created by thomas on 2018-03-26.
@@ -26,7 +25,7 @@ public abstract class AppModule {
 
     @Singleton
     @Binds
-    abstract RequestHelper retrofitHelper(RetrofitHelper retrofitHelper);
+    abstract RetrofitHelperInterface retrofitHelper(RetrofitHelper retrofitHelper);
 
     @Binds
     @IntoMap

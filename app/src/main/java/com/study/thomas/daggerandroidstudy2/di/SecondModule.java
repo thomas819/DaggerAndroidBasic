@@ -2,6 +2,7 @@ package com.study.thomas.daggerandroidstudy2.di;
 
 import com.study.thomas.daggerandroidstudy2.di.Scope.ActivityScope;
 import com.study.thomas.daggerandroidstudy2.mvp.Contract.SecondContract;
+import com.study.thomas.daggerandroidstudy2.mvp.Presenter.SecondPresenter;
 import com.study.thomas.daggerandroidstudy2.mvp.View.SecondActivity;
 
 import dagger.Binds;
@@ -20,7 +21,7 @@ public abstract class SecondModule {
 
     @ActivityScope
     @Binds
-    abstract SecondContract.Presenter bindPresenter(SecondContract.Presenter presenter);
+    abstract SecondContract.Presenter bindPresenter(SecondPresenter presenter);
 
 
 }

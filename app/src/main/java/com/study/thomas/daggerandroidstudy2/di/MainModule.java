@@ -20,5 +20,5 @@ public abstract class MainModule{
 
     @ActivityScope
     @Binds
-    public abstract MainContract.Presenter bindPresenter(MainPresenter presenter);
+    abstract MainContract.Presenter bindPresenter(MainPresenter presenter);
 }
