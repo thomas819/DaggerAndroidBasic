@@ -12,7 +12,7 @@ import dagger.android.AndroidInjector;
 
 @FragmentScope
 @Subcomponent(modules = Fragment1Module.class)
-public interface Fragment1Compoenet extends AndroidInjector<Fragment1>{
+public interface Fragment1Component extends AndroidInjector<Fragment1>{
     @Subcomponent.Builder
     abstract class Builder extends AndroidInjector.Builder<Fragment1>{}
 }

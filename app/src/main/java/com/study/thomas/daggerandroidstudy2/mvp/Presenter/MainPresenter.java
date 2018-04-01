@@ -29,11 +29,5 @@ public class MainPresenter implements MainContract.Presenter{
         this.retrofitHelper = retrofitHelper;
     }
 
-    @Override
-    public void getData(){
-
-
-    }
-
 
 }

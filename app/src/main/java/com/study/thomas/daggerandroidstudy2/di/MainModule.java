@@ -6,6 +6,7 @@ import com.study.thomas.daggerandroidstudy2.di.Scope.ActivityScope;
 import com.study.thomas.daggerandroidstudy2.mvp.Contract.MainContract;
 import com.study.thomas.daggerandroidstudy2.mvp.Presenter.MainPresenter;
 import com.study.thomas.daggerandroidstudy2.mvp.View.Fragment1;
+import com.study.thomas.daggerandroidstudy2.mvp.View.Fragment2;
 import com.study.thomas.daggerandroidstudy2.mvp.View.MainActivity;
 
 import dagger.Binds;
@@ -17,7 +18,7 @@ import dagger.multibindings.IntoMap;
 /**
  * Created by thomas on 2018-03-26.
  */
-@Module(subcomponents = Fragment1Compoenet.class)
+@Module(subcomponents = {Fragment1Component.class,Fragment2Component.class})
 public abstract class MainModule{
 
     @ActivityScope
@@ -31,5 +32,10 @@ public abstract class MainModule{
     @Binds
     @IntoMap
     @FragmentKey(Fragment1.class)
-    abstract AndroidInjector.Factory<? extends Fragment> bindFragment1(Fragment1Compoenet.Builder builder);
+    abstract AndroidInjector.Factory<? extends Fragment> bindFragment1(Fragment1Component.Builder builder);
+
+    @Binds
+    @IntoMap
+    @FragmentKey(Fragment2.class)
+    abstract AndroidInjector.Factory<? extends Fragment> bindFragment2(Fragment2Component.Builder builder);
 }

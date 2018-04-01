@@ -22,6 +22,7 @@ public class Fragment1Presenter implements Fragment1Contract.Presenter{
 
     Fragment1Contract.View view;
     RetrofitHelper retrofitHelper;
+    private CompositeDisposable mCompositeDisposable = new CompositeDisposable();
 
     @Inject
     public Fragment1Presenter(Fragment1Contract.View view, RetrofitHelper retrofitHelper) {
@@ -33,7 +34,7 @@ public class Fragment1Presenter implements Fragment1Contract.Presenter{
     public void getData(){
         Observable<List<Request.Repository>> observable = retrofitHelper.initRetrofit().repo1(1,"comments");
 
-        new CompositeDisposable().add(observable.subscribeOn(Schedulers.io())
+        mCompositeDisposable.add(observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new DisposableObserver<List<Request.Repository>>() {
                     @Override

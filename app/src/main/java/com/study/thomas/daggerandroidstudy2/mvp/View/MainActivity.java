@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         AndroidInjection.inject(this);
-        presenter.getData();
         initBottomNavi();
     }
 
@@ -50,9 +49,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             public Fragment getItem(int position) {
                 switch (position){
                     case 0:
-                        return Fragment1.newInstance();
+                        return new Fragment1();
                     case 1:
-                        return Fragment1.newInstance();
+                        return new Fragment2();
                     case 2:
                         return Fragment1.newInstance();
                 }
