@@ -2,6 +2,7 @@ package com.study.thomas.daggerandroidstudy2;
 
 import android.app.Activity;
 
+import com.squareup.leakcanary.LeakCanary;
 import com.study.thomas.daggerandroidstudy2.di.App.DaggerAppComponent;
 
 import javax.inject.Inject;
@@ -24,8 +25,15 @@ public class Application extends android.app.Application implements HasActivityI
     public void onCreate() {
         super.onCreate();
         DaggerAppComponent.create().inject(this);
+        initLeakCanary();
     }
 
+    private void initLeakCanary(){
+        if(LeakCanary.isInAnalyzerProcess(this)){
+            return;
+        }
+        LeakCanary.install(this);
+    }
 
     @Override
     public AndroidInjector<Activity> activityInjector() {

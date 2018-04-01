@@ -31,28 +31,7 @@ public class MainPresenter implements MainContract.Presenter{
 
     @Override
     public void getData(){
-        Observable<List<Request.Repository>> observable = retrofitHelper.initRetrofit().repo1(1,"comments");
-        CompositeDisposable mCompositeDisposable = new CompositeDisposable();
-        mCompositeDisposable.add(observable.subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(new DisposableObserver<List<Request.Repository>>() {
-                    @Override
-                    public void onNext(List<Request.Repository> repositories) {
-                        for(Request.Repository repositories1 : repositories)
-                        view.showTv(repositories1.getEmail());
-                    }
 
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                })
-        );
 
     }
 
