@@ -1,6 +1,6 @@
 package com.study.thomas.daggerandroidstudy2.di.App;
 
-import com.study.thomas.daggerandroidstudy2.Application;
+import com.study.thomas.daggerandroidstudy2.App;
 
 import javax.inject.Singleton;
 
@@ -14,5 +14,5 @@ import dagger.android.AndroidInjectionModule;
 @Singleton
 @Component(modules = {AndroidInjectionModule.class,AppModule.class})
 public interface AppComponent {
-    void inject(Application application);
+    void inject(App app);
 }
