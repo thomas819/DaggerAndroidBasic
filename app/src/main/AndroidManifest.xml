@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.study.thomas.daggerandroidstudy2">
     <uses-permission android:name="android.permission.INTERNET" />
-    <app
+    <application
         android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mvp.View.SecondActivity"></activity>
-    </app>
+        <activity android:name=".mvp.View.SecondActivity"/>
+    </application>
 
 </manifest>
