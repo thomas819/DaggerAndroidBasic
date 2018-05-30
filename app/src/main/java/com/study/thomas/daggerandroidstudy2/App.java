@@ -20,11 +20,10 @@ public class App extends android.app.Application implements HasActivityInjector{
     @Inject
     DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
 
-
     @Override
     public void onCreate() {
         super.onCreate();
-        DaggerAppComponent.create().inject(this);
+        DaggerAppComponent.builder().create(this).inject(this);
         initLeakCanary();
     }
 

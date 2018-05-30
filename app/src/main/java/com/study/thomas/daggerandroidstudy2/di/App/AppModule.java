@@ -1,7 +1,9 @@
 package com.study.thomas.daggerandroidstudy2.di.App;
 
 import android.app.Activity;
+import android.app.Application;
 
+import com.study.thomas.daggerandroidstudy2.App;
 import com.study.thomas.daggerandroidstudy2.di.MainComponent;
 import com.study.thomas.daggerandroidstudy2.di.SecondComponent;
 import com.study.thomas.daggerandroidstudy2.mvp.Model.RetrofitHelperInterface;
@@ -22,6 +24,10 @@ import dagger.multibindings.IntoMap;
  */
 @Module(subcomponents = {MainComponent.class, SecondComponent.class})
 public abstract class AppModule {
+
+    @Binds
+    @Singleton
+    abstract Application application(App app);
 
     @Singleton
     @Binds
