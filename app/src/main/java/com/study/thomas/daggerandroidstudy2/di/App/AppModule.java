@@ -15,6 +15,7 @@ import javax.inject.Singleton;
 
 import dagger.Binds;
 import dagger.Module;
+import dagger.Provides;
 import dagger.android.ActivityKey;
 import dagger.android.AndroidInjector;
 import dagger.multibindings.IntoMap;
@@ -32,6 +33,21 @@ public abstract class AppModule {
     @Singleton
     @Binds
     abstract RetrofitHelperInterface retrofitHelper(RetrofitHelper retrofitHelper);
+
+    //    @Provides
+//    @Named("unique_string_id")
+//    static String provideName(){
+//        return "I love Medium";
+//    }
+
+//    @Provides
+//    @Singleton
+//    static FirebaseDatabase provideFirebaseDatabase(){
+//        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+//        firebaseDatabase.setPersistenceEnabled(true);
+//        return firebaseDatabase;
+//    }
+// Provides 쓰려면 static 붙여서 쓰라
 
     @Binds
     @IntoMap

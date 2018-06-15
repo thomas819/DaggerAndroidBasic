@@ -8,7 +8,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.study.thomas.daggerandroidstudy2.App;
 import com.study.thomas.daggerandroidstudy2.R;
 import com.study.thomas.daggerandroidstudy2.mvp.Contract.MainContract;
 
